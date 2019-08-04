@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root">
+        
+    </div>
+    <script type="text/babel">
+   /* class Appy extends React.Component{
+        render(){
+            return(
+                <div className="navbar">
+                <ul>
+                <li>home</li>
+                <li>about</li>
+                <li>contact</li>
+                </ul>
+                </div>
+            )
+        }
+    }*/
+    class App extends React.Component{
+        state={
+            name:"Nishant",
+            age:19
+        }
+     handlechange=(e)=>{
+         this.setState({
+            name:e.target.value
+         })
+        
+     }
+        
+        render(){
+            return(
+                <div className="start">
+                <h1>hello,{this.state.name}</h1>
+                <input type="text" onChange={this.handlechange} value={this.state.name} />
+                 </div>
+            );
+        }
+    }
+    ReactDOM.render(<App />,document.getElementById('root'));
+    </script>
+
+</body>
+</html>
